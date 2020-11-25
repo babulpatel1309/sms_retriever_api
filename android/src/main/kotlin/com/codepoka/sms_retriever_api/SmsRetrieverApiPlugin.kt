@@ -100,9 +100,9 @@ class SmsRetrieverApiPlugin(private val context: Activity) : MethodCallHandler {
                         val pattern: Pattern = Pattern.compile("\\d{4,6}")
                         val matcher: Matcher = pattern.matcher(message)
                         if (matcher.find()) {
-                            result.success(matcher.group(0))
+                            result?.success(matcher.group(0))
                         } else {
-                            result.success(message)
+                            result?.success(message)
                         }
                     }
 
